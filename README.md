@@ -1,3 +1,14 @@
+docker run -it -p 3000:3000 IMAGE_ID
+
+docker login
+
+docker build -f Dockerfile.dev -t dexter:frontend .
+
+docker run -it -p 3000:3000 -v /home/node/app/node_modules -v /home/dexter/repos/frontend:/home/node/app dexter:frontend
+
+Runn test / override docker file command
+docker run -it frontend_web npm run test
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
